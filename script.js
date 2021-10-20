@@ -211,17 +211,34 @@ function _load() {
     const peruO = peru[0];
     console.log(peruO);
 
+    let landlockText = "";
+
+
+    if (peruO.landlocked = true) {
+        landlockText = "I've never met the sea.";
+    }
+    else {
+        landlockText = "I can go fishing for sea creatures here.";
+    }
+
+
+
     const peruHTML = `
         <section class="independent">
             <img src="${peruO.flags.png}" alt="flag">
-            <h1>${peruO.name.official}</h1>
-            <h2>${peruO.capital[0]}</h2>
-            <ul>
-                <li>Nyelv</li>
+            <h1><b>Official name:</b> ${peruO.name.official}</h1>
+            <h2><b>Capital:</b> ${peruO.capital[0]}</h2>
+            <ul>Languages:
+                <li>${peruO.languages.aym}</li>
+                <li>${peruO.languages.que}</li>
+                <li>${peruO.languages.spa}</li>
             </ul>
+            <h5 id="landlock">${landlockText}</h5>
             <!--<h5> Ha landlocked = true I've never met the sea.</h5>-->
         </section>
     `;
+
+
 
     console.log(rootElement);
 
